@@ -42,13 +42,13 @@
                     <h1 class="sub-title">About Me</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quaerat, maxime necessitatibus pariatur unde molestiae, quis ea tempora corrupti nisi quibusdam totam magni, in voluptate explicabo molestias laboriosam nihil est.</p>
                     <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
+                        <p class="tab-links" onclick="opentab('education', event)">Education</p>
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>Front-End</span><br>Desinging website interfaces</li>
+                            <li><span>Front-End</span><br>Designing website interfaces</li>
                             <li><span>Back-End</span><br>Learning Back-End Development</li>
                             <li><span>Api</span><br>Learning Api</li>
                         </ul>
@@ -99,7 +99,7 @@
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
-    function opentab(tabname){
+    function opentab(tabname, event){
         for(tablink of tablinks){
             tablink.classList.remove("active-link");
         }

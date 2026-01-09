@@ -4,331 +4,641 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Md Arifuzzaman - Front-End Developer from NIT SILCHAR. Portfolio showcasing web development projects and skills.">
-    <meta name="keywords" content="front-end developer, web developer, portfolio, HTML, CSS, JavaScript, NIT Silchar">
+    <meta name="keywords" content="front-end developer, web developer, portfolio, HTML, CSS, JavaScript, NIT Silchar, React, Node.js">
     <meta name="author" content="Md Arifuzzaman">
+    <meta name="theme-color" content="#0a0a0a">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://arif481.github.io/portfolio/">
     <meta property="og:title" content="Md Arifuzzaman | Front-End Developer">
-    <meta property="og:description" content="Portfolio of Md Arifuzzaman, Front-End Developer from NIT SILCHAR. Specializing in responsive web design and modern web technologies.">
+    <meta property="og:description" content="Portfolio of Md Arifuzzaman, Front-End Developer from NIT SILCHAR.">
     <meta property="og:image" content="https://arif481.github.io/portfolio/arif.jpeg">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://arif481.github.io/portfolio/">
     <meta name="twitter:title" content="Md Arifuzzaman | Front-End Developer">
-    <meta name="twitter:description" content="Portfolio of Md Arifuzzaman, Front-End Developer from NIT SILCHAR.">
-    <meta name="twitter:image" content="https://arif481.github.io/portfolio/arif.jpeg">
     
-    <title>Md Arifuzzaman | Front-End Developer Portfolio</title>
+    <title>Md Arifuzzaman | Front-End Developer</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/304dee5701.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
-    <!-- Skip Navigation for Accessibility -->
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <span class="loader-text">&lt;Arif /&gt;</span>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Skip Navigation -->
     <a href="#about" class="skip-link">Skip to main content</a>
-    
-    <div id="header">
-        <div class="con1">
-            <nav>
-                <img src="logo.png" alt="Arif's Logo" class="log">
-                <ul id="nav-menu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>Front-End Developer</p>
-                <h1>Hi, I'm <span>Md<br> Arifuzzaman</span> From NIT SILCHAR</h1>
-            </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-text">&lt;Arif /&gt;</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#portfolio" class="nav-link">Projects</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-cta">
+                    <a href="resume.pdf" download class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-download"></i> Resume
+                    </a>
+                </li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
         </div>
-    </div>
-    <!-- -----about------ -->
-    <div id="about">
-        <div class="con1">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="arif.jpeg" alt="Md Arifuzzaman - Front-End Developer">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>I'm a passionate Front-End Developer currently studying at NIT Silchar. I love creating beautiful, responsive, and user-friendly websites. With a strong foundation in HTML, CSS, and JavaScript, I'm constantly learning new technologies and frameworks to enhance my skills and build better web experiences.</p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
-                        <p class="tab-links" onclick="opentab('education', event)">Education</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Front-End</span><br>Designing website interfaces</li>
-                            <li><span>Back-End</span><br>Learning Back-End Development</li>
-                            <li><span>Api</span><br>Learning Api</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>Head of operations</span><br>Innovation Hub, CPSCL. 2019-2021</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>HSC</span><br>Cantonment Public School And College Lalmonirhat</li>
-                            <li><span>SSC</span><br>Namuri High School And College</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="gradient-bg"></div>
+            <div class="particles" id="particles"></div>
+            <div class="grid-overlay"></div>
         </div>
-    </div>
-
-<!-- -----------services--------------- -->
-<div id="services">
-    <div class="con1">
-        <h1 class="sub-title">My Services</h1>
-        <div class="services-list">
-            <div>
-                <i class="fa-solid fa-code"></i>
-                <h2>Web Development</h2>
-                <p>Building responsive and modern websites using HTML, CSS, and JavaScript. I create clean, efficient code that brings designs to life with smooth animations and interactions.</p>
-                <a href="#contact">Get in Touch</a>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for work
             </div>
-            <div>
-                <i class="fa-solid fa-object-group"></i>
-                <h2>UI/UX Design</h2>
-                <p>Designing intuitive user interfaces with a focus on user experience. I ensure websites are not only visually appealing but also easy to navigate and accessible to all users.</p>
-                <a href="#contact">Get in Touch</a>
-            </div>
-            <div>
-                <i class="fa-solid fa-mobile-screen"></i>
-                <h2>Responsive Design</h2>
-                <p>Creating websites that look and work perfectly on all devices - from mobile phones to desktop computers. Mobile-first approach ensures the best experience everywhere.</p>
-                <a href="#contact">Get in Touch</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- -----------portfolio--------------- -->
-<div id="portfolio">
-    <div class="con1">
-        <h1 class="sub-title">My Projects</h1>
-        <div class="work-list">
-            <div class="work">
-                <div class="work-placeholder">
-                    <i class="fa-solid fa-globe"></i>
-                    <span>Portfolio Website</span>
-                </div>
-                <div class="layer">
-                    <h3>Portfolio Website</h3>
-                    <p>My personal portfolio built with HTML, CSS & JavaScript. Features responsive design and smooth animations.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/arif481/portfolio" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://arif481.github.io/portfolio/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="work">
-                <div class="work-placeholder">
-                    <i class="fa-solid fa-heart-pulse"></i>
-                    <span>Life Reset App</span>
-                </div>
-                <div class="layer">
-                    <h3>Life Reset App</h3>
-                    <p>A habit tracking and personal development web application with Firebase backend integration.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/arif481/life-reset" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="work">
-                <div class="work-placeholder">
-                    <i class="fa-solid fa-code"></i>
-                    <span>Coming Soon</span>
-                </div>
-                <div class="layer">
-                    <h3>More Projects Coming</h3>
-                    <p>Currently working on exciting new projects. Check back soon or visit my GitHub for updates!</p>
-                    <div class="project-links">
-                        <a href="https://github.com/arif481" target="_blank" rel="noopener noreferrer" title="View GitHub"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a href="https://github.com/arif481?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn"><i class="fa-brands fa-github"></i> View All Projects on GitHub</a>
-    </div>
-</div>
-
-<!-- -----------contact--------------- -->
-<div id="contact">
-    <div class="con1">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i> <a href="mailto:arifuzzaman2212045@gmail.com">arifuzzaman2212045@gmail.com</a></p>
-                <p><i class="fa-solid fa-location-dot"></i> NIT Silchar, Assam, India</p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/arif481" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/arif481" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://twitter.com/arif481" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://instagram.com/arif481" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <a href="resume.pdf" download class="btn btn2"><i class="fa-solid fa-download"></i> Download CV</a>
-            </div>
-            <div class="contact-right">
-                <form action="https://formspree.io/f/xpwzgvqk" method="POST" id="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn2"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
-                </form>
-                <p id="form-status" class="form-status"></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- -----------footer--------------- -->
-<div class="footer">
-    <div class="con1">
-        <p>Made with <i class="fa-solid fa-heart"></i> by Md Arifuzzaman</p>
-        <p>&copy; 2026 All Rights Reserved</p>
-    </div>
-</div>
-<script>
-    // ==========================================
-    // Tab Functionality
-    // ==========================================
-    const tablinks = document.getElementsByClassName("tab-links");
-    const tabcontents = document.getElementsByClassName("tab-contents");
-    
-    function opentab(tabname, event) {
-        for (const tablink of tablinks) {
-            tablink.classList.remove("active-link");
-        }
-        for (const tabcontent of tabcontents) {
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-
-    // ==========================================
-    // Mobile Menu Functionality
-    // ==========================================
-    const navMenu = document.getElementById("nav-menu");
-    
-    function openMenu() {
-        navMenu.classList.add("open");
-        document.body.style.overflow = "hidden";
-    }
-    
-    function closeMenu() {
-        navMenu.classList.remove("open");
-        document.body.style.overflow = "auto";
-    }
-
-    // Close mobile menu when clicking a link
-    document.querySelectorAll("#nav-menu a").forEach(link => {
-        link.addEventListener("click", closeMenu);
-    });
-
-    // ==========================================
-    // Smooth Scroll for Anchor Links
-    // ==========================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
             
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // ==========================================
-    // Contact Form Handling
-    // ==========================================
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
+            <h1 class="hero-title">
+                <span class="hero-greeting">Hello, I'm</span>
+                <span class="hero-name">Md Arifuzzaman</span>
+            </h1>
             
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
+            <div class="hero-role">
+                <span class="role-prefix">I'm a</span>
+                <span class="typewriter" id="typewriter"></span>
+                <span class="cursor-blink">|</span>
+            </div>
             
-            try {
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: new FormData(this),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
+            <p class="hero-description">
+                Passionate about creating beautiful, responsive, and user-friendly web experiences. 
+                Currently pursuing B.Tech at <span class="highlight">NIT Silchar</span>.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <span>Let's Talk</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </a>
+            </div>
+            
+            <div class="hero-social">
+                <a href="https://github.com/arif481" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/arif481" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com/arif481" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="mailto:arifuzzaman2212045@gmail.com" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <div class="image-wrapper">
+                <div class="image-glow"></div>
+                <img src="arif.jpeg" alt="Md Arifuzzaman" loading="eager">
+            </div>
+            <div class="floating-card card-1">
+                <i class="fa-brands fa-react"></i>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fa-brands fa-js"></i>
+            </div>
+            <div class="floating-card card-3">
+                <i class="fa-brands fa-css3-alt"></i>
+            </div>
+        </div>
+        
+        <a href="#about" class="scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>Scroll Down</span>
+        </a>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-count="2">
+                    <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <div class="stat-number"><span class="counter">0</span>+</div>
+                    <div class="stat-label">Years Learning</div>
+                </div>
+                <div class="stat-item" data-count="10">
+                    <div class="stat-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="stat-number"><span class="counter">0</span>+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item" data-count="500">
+                    <div class="stat-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                    <div class="stat-number"><span class="counter">0</span>+</div>
+                    <div class="stat-label">Cups of Coffee</div>
+                </div>
+                <div class="stat-item" data-count="1000">
+                    <div class="stat-icon"><i class="fa-brands fa-github"></i></div>
+                    <div class="stat-number"><span class="counter">0</span>+</div>
+                    <div class="stat-label">GitHub Commits</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="arif.jpeg" alt="Md Arifuzzaman" loading="lazy">
+                        <div class="frame-decoration"></div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="exp-number">2+</span>
+                        <span class="exp-text">Years of<br>Learning</span>
+                    </div>
+                </div>
                 
-                if (response.ok) {
-                    formStatus.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
-                    formStatus.className = 'form-status success';
-                    this.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                formStatus.textContent = '✗ Oops! Something went wrong. Please try again or email me directly.';
-                formStatus.className = 'form-status error';
-            } finally {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
+                <div class="about-content">
+                    <h3 class="about-heading">
+                        A passionate <span class="text-gradient">Front-End Developer</span> based in India
+                    </h3>
+                    
+                    <p class="about-text">
+                        I'm a dedicated developer currently pursuing my B.Tech at <strong>National Institute of Technology, Silchar</strong>. 
+                        My journey in web development started with curiosity about how websites work, and has evolved into a deep passion 
+                        for creating impactful digital experiences.
+                    </p>
+                    
+                    <p class="about-text">
+                        I specialize in building responsive, accessible, and performant web applications. 
+                        When I'm not coding, you'll find me exploring new technologies, contributing to open source, 
+                        or enjoying a good cup of coffee.
+                    </p>
+                    
+                    <div class="about-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="skills">
+                                <i class="fa-solid fa-code"></i> Skills
+                            </button>
+                            <button class="tab-btn" data-tab="experience">
+                                <i class="fa-solid fa-briefcase"></i> Experience
+                            </button>
+                            <button class="tab-btn" data-tab="education">
+                                <i class="fa-solid fa-graduation-cap"></i> Education
+                            </button>
+                        </div>
+                        
+                        <div class="tab-content active" id="skills-tab">
+                            <ul class="tab-list">
+                                <li><span class="tab-highlight">Front-End</span> — HTML, CSS, JavaScript, React</li>
+                                <li><span class="tab-highlight">Styling</span> — Tailwind CSS, SASS, Bootstrap</li>
+                                <li><span class="tab-highlight">Tools</span> — Git, VS Code, Figma, npm</li>
+                                <li><span class="tab-highlight">Learning</span> — Node.js, MongoDB, TypeScript</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tab-content" id="experience-tab">
+                            <ul class="tab-list">
+                                <li>
+                                    <span class="tab-highlight">Head of Operations</span>
+                                    <br><span class="tab-meta">Innovation Hub, CPSCL • 2019-2021</span>
+                                </li>
+                                <li>
+                                    <span class="tab-highlight">Freelance Web Developer</span>
+                                    <br><span class="tab-meta">Self-employed • 2023-Present</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tab-content" id="education-tab">
+                            <ul class="tab-list">
+                                <li>
+                                    <span class="tab-highlight">B.Tech in Computer Science</span>
+                                    <br><span class="tab-meta">NIT Silchar • 2022-2026</span>
+                                </li>
+                                <li>
+                                    <span class="tab-highlight">Higher Secondary (HSC)</span>
+                                    <br><span class="tab-meta">Cantonment Public School And College Lalmonirhat</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="about-buttons">
+                        <a href="resume.pdf" download class="btn btn-primary">
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            Hire Me <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    // ==========================================
-    // Scroll Animations (Intersection Observer)
-    // ==========================================
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What I work with</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title"><i class="fa-solid fa-laptop-code"></i> Frontend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-skill="95">
+                            <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                            <span class="skill-name">HTML5</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="90">
+                            <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                            <span class="skill-name">CSS3</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="85">
+                            <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="75">
+                            <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
+                            <span class="skill-name">React</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title"><i class="fa-solid fa-palette"></i> Design</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-skill="85">
+                            <div class="skill-icon"><i class="fa-brands fa-sass"></i></div>
+                            <span class="skill-name">SASS</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="80">
+                            <div class="skill-icon"><i class="fa-solid fa-wind"></i></div>
+                            <span class="skill-name">Tailwind</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="75">
+                            <div class="skill-icon"><i class="fa-brands fa-bootstrap"></i></div>
+                            <span class="skill-name">Bootstrap</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="70">
+                            <div class="skill-icon"><i class="fa-brands fa-figma"></i></div>
+                            <span class="skill-name">Figma</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title"><i class="fa-solid fa-server"></i> Backend & Tools</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-skill="65">
+                            <div class="skill-icon"><i class="fa-brands fa-node-js"></i></div>
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="60">
+                            <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                            <span class="skill-name">MongoDB</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="85">
+                            <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+                            <span class="skill-name">Git</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="70">
+                            <div class="skill-icon"><i class="fa-solid fa-fire"></i></div>
+                            <span class="skill-name">Firebase</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-marquee">
+                <div class="marquee-content">
+                    <span><i class="fa-brands fa-html5"></i> HTML5</span>
+                    <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                    <span><i class="fa-brands fa-js"></i> JavaScript</span>
+                    <span><i class="fa-brands fa-react"></i> React</span>
+                    <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+                    <span><i class="fa-brands fa-git-alt"></i> Git</span>
+                    <span><i class="fa-brands fa-sass"></i> SASS</span>
+                    <span><i class="fa-brands fa-figma"></i> Figma</span>
+                    <span><i class="fa-brands fa-html5"></i> HTML5</span>
+                    <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                    <span><i class="fa-brands fa-js"></i> JavaScript</span>
+                    <span><i class="fa-brands fa-react"></i> React</span>
+                    <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+                    <span><i class="fa-brands fa-git-alt"></i> Git</span>
+                    <span><i class="fa-brands fa-sass"></i> SASS</span>
+                    <span><i class="fa-brands fa-figma"></i> Figma</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My recent work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <article class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/arif481/portfolio" target="_blank" class="project-link"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://arif481.github.io/portfolio/" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">Personal portfolio with modern design, animations, and responsive layout.</p>
+                    </div>
+                </article>
+                
+                <article class="project-card featured" data-category="web">
+                    <div class="project-badge">Featured</div>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/arif481/life-reset" target="_blank" class="project-link"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <h3 class="project-title">Life Reset App</h3>
+                        <p class="project-description">Habit tracking app with Firebase backend and real-time updates.</p>
+                    </div>
+                </article>
+                
+                <article class="project-card" data-category="design">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/arif481" target="_blank" class="project-link"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Coming Soon</span>
+                        </div>
+                        <h3 class="project-title">More Projects</h3>
+                        <p class="project-description">Exciting new projects coming soon. Check my GitHub!</p>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="portfolio-cta">
+                <a href="https://github.com/arif481?tab=repositories" target="_blank" class="btn btn-outline">
+                    <i class="fa-brands fa-github"></i> View All on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
 
-    // Observe sections for scroll animations
-    document.querySelectorAll('#about, #services, #portfolio, #contact').forEach(section => {
-        section.classList.add('animate-section');
-        observer.observe(section);
-    });
-</script>
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What I offer</span>
+                <h2 class="section-title">My Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">Building responsive, fast, and modern websites using the latest technologies.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Clean code</li>
+                        <li><i class="fa-solid fa-check"></i> SEO optimized</li>
+                        <li><i class="fa-solid fa-check"></i> Performance focused</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card popular">
+                    <div class="popular-badge">Popular</div>
+                    <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3 class="service-title">Responsive Design</h3>
+                    <p class="service-description">Pixel-perfect designs that work flawlessly on all devices.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Mobile-first</li>
+                        <li><i class="fa-solid fa-check"></i> Cross-browser</li>
+                        <li><i class="fa-solid fa-check"></i> Retina-ready</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-object-group"></i></div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">Designing intuitive interfaces that users love.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> User-centered</li>
+                        <li><i class="fa-solid fa-check"></i> Prototyping</li>
+                        <li><i class="fa-solid fa-check"></i> Accessible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get in touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-description">Have a project in mind? Let's work together!</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <a href="mailto:arifuzzaman2212045@gmail.com">arifuzzaman2212045@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-content">
+                            <h4>Location</h4>
+                            <p>NIT Silchar, Assam, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="info-content">
+                            <h4>Availability</h4>
+                            <p>Open for freelance work</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h4>Follow Me</h4>
+                        <div class="social-icons">
+                            <a href="https://github.com/arif481" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://linkedin.com/in/arif481" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com/arif481" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://instagram.com/arif481" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper">
+                    <form action="https://formspree.io/f/xpwzgvqk" method="POST" id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p id="form-status" class="form-status"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">&lt;Arif /&gt;</a>
+                    <p>Building the web, one line at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/arif481" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/arif481" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/arif481" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Designed & Built with <i class="fa-solid fa-heart"></i> by Md Arifuzzaman</p>
+                <p>&copy; 2026 All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
 </html>

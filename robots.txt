@@ -1,0 +1,5 @@
+# robots.txt for Md Arifuzzaman's Portfolio
+User-agent: *
+Allow: /
+
+Sitemap: https://arif481.github.io/portfolio/sitemap.xml

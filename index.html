@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARIF'S PORTFOLIO WEBSITE</title>
+    <meta name="description" content="Md Arifuzzaman - Front-End Developer from NIT SILCHAR. Portfolio showcasing web development projects and skills.">
+    <meta name="keywords" content="front-end developer, web developer, portfolio, HTML, CSS, JavaScript">
+    <meta name="author" content="Md Arifuzzaman">
+    <title>Md Arifuzzaman | Front-End Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/304dee5701.js" crossorigin="anonymous"></script>
 </head>
@@ -16,14 +19,16 @@
     <div id="header">
         <div class="con1">
             <nav>
-                <img src="logo.png" alt="logo" class="log">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                <img src="logo.png" alt="Arif's Logo" class="log">
+                <ul id="nav-menu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Front-End Developer</p>
@@ -36,11 +41,11 @@
         <div class="con1">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="arif.jpeg">
+                    <img src="arif.jpeg" alt="Md Arifuzzaman - Front-End Developer">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quaerat, maxime necessitatibus pariatur unde molestiae, quis ea tempora corrupti nisi quibusdam totam magni, in voluptate explicabo molestias laboriosam nihil est.</p>
+                    <p>I'm a passionate Front-End Developer currently studying at NIT Silchar. I love creating beautiful, responsive, and user-friendly websites. With a strong foundation in HTML, CSS, and JavaScript, I'm constantly learning new technologies and frameworks to enhance my skills and build better web experiences.</p>
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
                         <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
@@ -70,46 +75,147 @@
     </div>
 
 <!-- -----------services--------------- -->
-<!-- -----Actually I don't provide any service till now. So this part is just a example and not connected to me----- -->
 <div id="services">
     <div class="con1">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
             <div>
                 <i class="fa-solid fa-code"></i>
-                <h2>Web Design</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dolores culpa consequuntur. Labore doloribus quis obcaecati! Ut ad, maxime molestiae earum soluta deserunt ex veniam cum. Dicta veritatis natus exercitationem.</p>
-                <a href="#">Learn More</a>
+                <h2>Web Development</h2>
+                <p>Building responsive and modern websites using HTML, CSS, and JavaScript. I create clean, efficient code that brings designs to life with smooth animations and interactions.</p>
+                <a href="#contact">Get in Touch</a>
             </div>
             <div>
                 <i class="fa-solid fa-object-group"></i>
                 <h2>UI/UX Design</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dolores culpa consequuntur. Labore doloribus quis obcaecati! Ut ad, maxime molestiae earum soluta deserunt ex veniam cum. Dicta veritatis natus exercitationem.</p>
-                <a href="#">Learn More</a>
+                <p>Designing intuitive user interfaces with a focus on user experience. I ensure websites are not only visually appealing but also easy to navigate and accessible to all users.</p>
+                <a href="#contact">Get in Touch</a>
             </div>
             <div>
-                <i class="fa-solid fa-gamepad"></i>
-                <h2>Game Development</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dolores culpa consequuntur. Labore doloribus quis obcaecati! Ut ad, maxime molestiae earum soluta deserunt ex veniam cum. Dicta veritatis natus exercitationem.</p>
-                <a href="#">Learn More</a>
+                <i class="fa-solid fa-mobile-screen"></i>
+                <h2>Responsive Design</h2>
+                <p>Creating websites that look and work perfectly on all devices - from mobile phones to desktop computers. Mobile-first approach ensures the best experience everywhere.</p>
+                <a href="#contact">Get in Touch</a>
             </div>
         </div>
     </div>
 </div>
+
+<!-- -----------portfolio--------------- -->
+<div id="portfolio">
+    <div class="con1">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="https://via.placeholder.com/400x300/262626/ff004f?text=Project+1" alt="Project 1">
+                <div class="layer">
+                    <h3>Web Application</h3>
+                    <p>A responsive web application built with modern technologies.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="https://via.placeholder.com/400x300/262626/ff004f?text=Project+2" alt="Project 2">
+                <div class="layer">
+                    <h3>Portfolio Website</h3>
+                    <p>A clean and modern portfolio website design.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="https://via.placeholder.com/400x300/262626/ff004f?text=Project+3" alt="Project 3">
+                <div class="layer">
+                    <h3>Landing Page</h3>
+                    <p>An engaging landing page with smooth animations.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See More Projects</a>
+    </div>
+</div>
+
+<!-- -----------contact--------------- -->
+<div id="contact">
+    <div class="con1">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> arifuzzaman@example.com</p>
+                <p><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="#" class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="contact-form">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- -----------footer--------------- -->
+<div class="footer">
+    <div class="con1">
+        <p>Made with <i class="fa-solid fa-heart"></i> by Md Arifuzzaman</p>
+        <p>&copy; 2026 All Rights Reserved</p>
+    </div>
+</div>
 <script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    function opentab(tabname, event){
-        for(tablink of tablinks){
+    // Tab functionality
+    const tablinks = document.getElementsByClassName("tab-links");
+    const tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname, event) {
+        for (const tablink of tablinks) {
             tablink.classList.remove("active-link");
         }
-        for(tabcontent of tabcontents){
+        for (const tabcontent of tabcontents) {
             tabcontent.classList.remove("active-tab");
         }
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
-</script>    
+
+    // Mobile menu functionality
+    const navMenu = document.getElementById("nav-menu");
+    
+    function openMenu() {
+        navMenu.classList.add("open");
+    }
+    
+    function closeMenu() {
+        navMenu.classList.remove("open");
+    }
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll("#nav-menu a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

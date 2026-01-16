@@ -111,7 +111,7 @@ window.addEventListener('scroll', () => {
 // Typewriter Effect
 // ==========================================
 const typewriter = document.getElementById('typewriter');
-const words = ['Front-End Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Tech Lover'];
+const words = ['Full-Stack Developer', 'IoT Developer', 'CSE Student @ NITS', 'Tech Enthusiast'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

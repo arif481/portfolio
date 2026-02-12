@@ -353,4 +353,4 @@ revealElements.forEach(el => {
 // ==========================================
 console.log('%c👋 Hey there, curious developer!', 'font-size: 20px; font-weight: bold; color: #6366f1;');
 console.log('%cThanks for checking out my portfolio.', 'font-size: 14px; color: #a1a1aa;');
-console.log('%cWant to connect? Email me at arifuzzaman2212045@gmail.com', 'font-size: 14px; color: #a1a1aa;');
+console.log('%cWant to connect? Email me at mdarifuzzaman481@gmail.com', 'font-size: 14px; color: #a1a1aa;');

@@ -1,11 +1,16 @@
 // ==========================================
 // Preloader
 // ==========================================
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
+    if (!preloader) return;
+
+    const preloaderDelay = prefersReducedMotion ? 0 : 300;
     setTimeout(() => {
         preloader.classList.add('loaded');
-    }, 1500);
+    }, preloaderDelay);
 });
 
 // ==========================================
@@ -62,48 +67,57 @@ const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
-
-// Scroll effect
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Mobile menu toggle
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-});
-
-// Close menu on link click
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-    });
-});
-
-// Active link on scroll
+const backToTop = document.getElementById('back-to-top');
 const sections = document.querySelectorAll('section[id]');
 
-window.addEventListener('scroll', () => {
+const handleScroll = () => {
     const scrollY = window.pageYOffset;
-    
+
+    if (navbar) {
+        navbar.classList.toggle('scrolled', scrollY > 100);
+    }
+
+    if (backToTop) {
+        backToTop.classList.toggle('visible', scrollY > 500);
+    }
+
     sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 200;
         const sectionId = section.getAttribute('id');
         const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-        
+
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             navLinks.forEach(link => link.classList.remove('active'));
             if (navLink) navLink.classList.add('active');
         }
+    });
+};
+
+window.addEventListener('scroll', handleScroll, { passive: true });
+handleScroll();
+
+// Mobile menu toggle
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+        navToggle.setAttribute('aria-expanded', String(isExpanded));
+    });
+}
+
+// Close menu on link click
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navToggle) {
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+        if (navMenu) {
+            navMenu.classList.remove('active');
+        }
+        document.body.classList.remove('no-scroll');
     });
 });
 
@@ -141,7 +155,13 @@ function type() {
     setTimeout(type, typeSpeed);
 }
 
-type();
+if (typewriter) {
+    if (prefersReducedMotion) {
+        typewriter.textContent = words[0];
+    } else {
+        type();
+    }
+}
 
 // ==========================================
 // Particles Background
@@ -149,14 +169,16 @@ type();
 const particlesContainer = document.getElementById('particles');
 const particleCount = 50;
 
-for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 15 + 's';
-    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-    particlesContainer.appendChild(particle);
+if (particlesContainer && !prefersReducedMotion) {
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particlesContainer.appendChild(particle);
+    }
 }
 
 // ==========================================
@@ -300,19 +322,11 @@ if (contactForm) {
 // ==========================================
 // Back to Top
 // ==========================================
-const backToTop = document.getElementById('back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
-    }
-});
-
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (backToTop) {
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    });
+}
 
 // ==========================================
 // Smooth Scroll
@@ -325,7 +339,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
         }
     });
 });

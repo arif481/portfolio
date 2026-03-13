@@ -38,7 +38,7 @@ portfolio/
 ├── logo.png            # Navigation logo
 ├── background.png      # Hero section background
 ├── arif.jpeg           # Profile photo
-├── resume.pdf          # Downloadable CV
+├── Resume.pdf          # Downloadable CV
 ├── robots.txt          # Search engine directives
 ├── sitemap.xml         # Sitemap for SEO
 ├── README.md           # Documentation
@@ -74,7 +74,7 @@ To use this template for your own portfolio:
 2. Update content in `index.html`
 3. Modify colors in `styles.css` (search for `#ff004f`)
 4. Update social links and contact information
-5. Add your own resume as `resume.pdf`
+5. Add your own resume as `Resume.pdf`
 6. Update Formspree form ID in contact section
 
 ## 👨‍💻 Author
@@ -84,7 +84,7 @@ Front-End Developer | NIT Silchar
 
 - GitHub: [@arif481](https://github.com/arif481)
 - LinkedIn: [arif481](https://www.linkedin.com/in/arif481)
-- Email: arifuzzaman2212045@gmail.com
+- Email: mdarifuzzaman481@gmail.com
 
 ## 📝 License
 

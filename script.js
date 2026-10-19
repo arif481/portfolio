@@ -861,5 +861,14 @@
         runPreloader();
         if (hasGsap) ScrollTrigger.refresh();
     });
+
+    // If animation frames stall (a throttled tab, a slow device), never leave the page locked behind the preloader.
+    setTimeout(() => {
+        const pre = $('#preloader');
+        if (!pre) return;
+        pre.remove();
+        if (lenis) lenis.start();
+        if (hasGsap) gsap.set(['.hero-title', '.hero-fade', '#hero-canvas'], { autoAlpha: 1 });
+    }, 7000);
     window.addEventListener('load', () => { if (hasGsap) ScrollTrigger.refresh(); });
 })();

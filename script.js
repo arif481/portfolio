@@ -125,7 +125,7 @@ navLinks.forEach(link => {
 // Typewriter Effect
 // ==========================================
 const typewriter = document.getElementById('typewriter');
-const words = ['Full-Stack Developer', 'IoT Developer', 'CSE Student @ NITS', 'Tech Enthusiast'];
+const words = ['Applied ML Developer', 'Full-Stack Developer', 'CSE Student @ NITS', 'Student Researcher'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

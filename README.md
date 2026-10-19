@@ -2,7 +2,7 @@
 
 My personal site: who I am, what I've built, and how to reach me.
 
-**Live:** https://iamarif.me/portfolio/
+**Live:** https://arif481.github.io/portfolio/
 
 It is a single static page in plain HTML, CSS and JavaScript, with no framework or build step.
 
